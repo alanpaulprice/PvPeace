@@ -25,6 +25,8 @@
 		"PVP_ROUNDS_PLAYED",
 		"PVP_GAMES_WON",
 		"PVP_ROUNDS_WON",
-		"PVPQueueFrame"
+		"PVPQueueFrame",
+		"PVPUIFrame_OnShow",
+		"ConquestFrame_OnHide"
 	],
 }

@@ -7,3 +7,4 @@
 ## SavedVariablesPerCharacter:
 
 Core.lua
+PvpUi.lua
