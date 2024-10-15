@@ -1,0 +1,9 @@
+## Interface: 110002
+## Title: PvPeace
+## Version: 1.0.0
+## Author: alanpaulprice
+## Notes: Making PvP more peaceful by eliminating negative elements.
+## SavedVariables: PvPeaceDB
+## SavedVariablesPerCharacter:
+
+Core.lua
