@@ -1,6 +1,5 @@
-local addonName, addon = ...
+local _, addon = ...
 addon.PvpUi = {}
-local PvpUi = addon.PvpUi
 
 local function onConquestFrameButtonEnter()
 	ConquestTooltip:Hide()
@@ -41,7 +40,7 @@ local function addScriptHooksToConquestFrameButtons()
 	end
 end
 
-function PvpUi:Initialize()
+function addon:HideRatingFromConquestFrame()
 	hooksecurefunc(PVPQueueFrame.HonorInset.RatedPanel, "Show", onRatedPanelShow)
 	hooksecurefunc("ConquestFrame_Update", onConquestFrameUpdate)
 	addScriptHooksToConquestFrameButtons()

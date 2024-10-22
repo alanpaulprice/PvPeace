@@ -27,6 +27,13 @@
 		"PVP_ROUNDS_WON",
 		"PVPQueueFrame",
 		"PVPUIFrame_OnShow",
-		"ConquestFrame_OnHide"
+		"ConquestFrame_OnHide",
+		"PVPMatchScoreboard",
+		"PVPMatchScoreboardMixin",
+		"PVPMatchResults",
+		"UIWidgetTopCenterContainerFrame",
+		"PVPMatchResultsMixin",
+		"PVP",
+		"EventToastManagerFrame"
 	],
 }

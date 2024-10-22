@@ -7,4 +7,10 @@
 ## SavedVariablesPerCharacter:
 
 Core.lua
-PvpUi.lua
+
+HidePvpMatchResults.lua
+HidePvpMatchScoreboard.lua
+HideRatingFromConquestFrame.lua
+HideWinsFromEventToastManagerFrame.lua
+HideWinsFromUIWidgetTopCenter.lua
+ToggleChatDisabled.lua
