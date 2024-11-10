@@ -1,6 +1,8 @@
 local addonName, addon = ...
 
-function addon:ToggleChatDisabled(isPvpZone)
+function addon:ToggleChatDisabled()
+	local _, zone = IsInInstance()
+	local isPvpZone = zone == "pvp" or zone == "arena"
 	local chatIsDisabled = C_SocialRestrictions.IsChatDisabled()
 
 	if isPvpZone and not chatIsDisabled then
