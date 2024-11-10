@@ -1,16 +1,9 @@
 local _, addon = ...
 
-function addon:ADDON_LOADED(name)
-	if name == "Blizzard_PVPUI" then
-		addon:HideRatingFromConquestFrame()
-	end
-end
+local function OnWorldEntranceOrZoneChange()
+	local _, instanceType = IsInInstance()
 
-function addon:PLAYER_ENTERING_WORLD()
-	local _, zone = IsInInstance()
-	local isPvpZone = zone == "pvp" or zone == "arena"
-
-	if isPvpZone then
+	if instanceType == "pvp" or instanceType == "arena" then
 		addon:HidePvpMatchScoreboard()
 		addon:HidePvpMatchResults()
 	end
@@ -20,7 +13,21 @@ function addon:PLAYER_ENTERING_WORLD()
 		addon.HideWinsFromEventToastManagerFrame()
 	end
 
-	addon.ToggleChatDisabled(isPvpZone)
+	addon.ToggleChatDisabled()
+end
+
+function addon:ADDON_LOADED(name)
+	if name == "Blizzard_PVPUI" then
+		addon:HideRatingFromConquestFrame()
+	end
+end
+
+function addon:PLAYER_ENTERING_WORLD()
+	OnWorldEntranceOrZoneChange()
+end
+
+function addon:ZONE_CHANGED_NEW_AREA()
+	OnWorldEntranceOrZoneChange()
 end
 
 function addon:CHAT_DISABLED_CHANGED()
@@ -30,6 +37,7 @@ end
 local events = CreateFrame("Frame")
 events:RegisterEvent("ADDON_LOADED")
 events:RegisterEvent("PLAYER_ENTERING_WORLD")
+events:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 events:RegisterEvent("CHAT_DISABLED_CHANGED")
 events:SetScript("OnEvent", function(self, event, ...)
 	addon[event](self, ...)
