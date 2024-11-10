@@ -13,4 +13,5 @@ HidePvpMatchScoreboard.lua
 HideRatingFromConquestFrame.lua
 HideWinsFromEventToastManagerFrame.lua
 HideWinsFromUIWidgetTopCenter.lua
+MuteEnemyBattlegroundVictoryMusic.lua
 ToggleChatDisabled.lua
